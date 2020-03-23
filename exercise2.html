@@ -1,0 +1,45 @@
+<style type="text/css">
+	.container{
+		text-align: center;
+	}
+</style>
+
+<!DOCTYPE html>
+<html>
+	<body style="background-color: #272727">
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="container", id='images'>
+			<img src='https://s23527.pcdn.co/wp-content/uploads/2019/01/Aquamarine.jpg.optimal.jpg', id='slides', width="1000", height="500">
+		</div>
+		<br>
+		<div class="container", id='buttons'>
+			<button onclick="prev()">Previous</button>
+			<button onclick="next()">Next</button>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	let count = 0;
+
+	let images = ['https://s23527.pcdn.co/wp-content/uploads/2019/01/Aquamarine.jpg.optimal.jpg','https://cdn1.epicgames.com/ue/product/Screenshot/7-1920x1080-c4334b28ada3ae5c0ce2bf769794e8ca-1920x1080-c4334b28ada3ae5c0ce2bf769794e8ca.jpg','https://www.nationalgeographic.com/content/dam/travel/rights-exempt/2019-travel-photo-contest/epic-landscapes/2019-travel-photo-contest-epic-landscapes035.ngsversion.1555645554283.adapt.1900.1.jpg','https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2018/06/ultra-wide-mistakes-lead-image.jpg','https://static.photocdn.pt/images/articles/2018/03/20/articles/2017_8/Natural_Night.jpg'];
+
+	function next(){
+		count++;
+		if(count == 5){
+			count = 0;
+		}
+		document.getElementById("slides").src = images[count];
+	}
+
+	function prev(){
+		count--;
+		if(count == -1){
+			count = 4;
+		}
+		document.getElementById("slides").src = images[count];
+	}
+</script>

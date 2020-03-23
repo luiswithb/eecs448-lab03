@@ -1,0 +1,98 @@
+<style type="text/css">
+	#textborder{
+		border: solid;
+	}
+	#div1{
+		text-align: center;
+	}
+</style>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="textborder">
+			<p>Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, search engine, cloud computing, software, and hardware. It is considered one of the Big Four technology companies, alongside Amazon, Apple, and Facebook.</p>			
+		</div>
+		<br>
+		<div id="div1">
+			<h2>Border</h2>
+			<label>Color</label>
+			<br>
+			<label for='red'>Red value</label>
+		    <input type='value', id='red', placeholder="0-255"></input>
+		    <br>
+		    <label for='green'>Blue value</label>
+		    <input type='value', id='green', placeholder="0-255"></input>
+		    <br>
+		    <label for='blue'>Green value</label>
+		    <input type='value', id='blue', placeholder="0-255"></input>
+		    <br>
+		    <br>
+		    <label>Width</label>
+		    <br>
+		    <input type='value', id='width', placeholder="0-255"></input>
+
+		    <h2>Background</h2>
+			<label>Color</label>
+			<br>
+			<label for='red2'>Red value</label>
+		    <input type='value', id='red2', placeholder="0-255"></input>
+		    <br>
+		    <label for='green2'>Blue value</label>
+		    <input type='value', id='green2', placeholder="0-255"></input>
+		    <br>
+		    <label for='blue2'>Green value</label>
+		    <input type='value', id='blue2', placeholder="0-255"></input>
+		    <br>
+		    <br>
+		    <button onclick="change()">Change</button>
+		    <br>
+		    <label>Default values are 0</label>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	function change(){
+		let width = String(document.getElementById('width').value);
+
+		if(width >= 0 && width <= 255){
+			document.getElementById('textborder').style.borderWidth = width;
+		}
+
+		let red = rangeFind(String(document.getElementById('red').value));
+		let green = rangeFind(String(document.getElementById('green').value));
+		let blue = rangeFind(String(document.getElementById('blue').value));
+
+		document.getElementById('textborder').style.borderColor = "rgb("+red+","+green+","+blue+")";
+
+		let red2 = rangeFind(String(document.getElementById('red2').value));
+		let green2 = rangeFind(String(document.getElementById('green2').value));
+		let blue2 = rangeFind(String(document.getElementById('blue2').value));
+
+		document.getElementById('textborder').style.backgroundColor = "rgb("+red2+","+green2+","+blue2+")";	
+
+	}
+
+	function rangeFind(x){
+		let num = x;
+		if(num == ''){
+			return 0;
+		}
+
+		if(num >= 0 && num <= 255){
+			num = num;
+		}
+		else if(num > 255){
+			num = 255;
+		}
+		else if(num < 0){
+			num = 0;
+		}
+		else{
+			num = 0;
+		}
+
+		return num;
+	}
+</script>

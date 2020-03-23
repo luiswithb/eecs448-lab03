@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <form id="first">
+        <div>
+          <label for='firstPass'>Enter a password</label>
+          <input type='text', id='firstPass'></input>
+        </div>
+          <label for='secondPass'>Confirm password</label>
+          <input type='text', id='secondPass'></input>
+        <div>
+        </div>
+      </form>
+      <button type="submit", id="validate", onclick="validatePass()">Validate</button>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function validatePass(){
+    let first = String(document.getElementById("firstPass").value);
+    let second = String(document.getElementById("secondPass").value);
+
+    if(first != second){
+      alert("Passwords must match");
+    }
+    if(first.length < 8 || second.length < 8){
+      alert("Password must be at least 8 characters long");
+    }
+  }
+</script>
